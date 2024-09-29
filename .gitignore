@@ -53,8 +53,8 @@ pip-log.txt
 pip-delete-this-directory.txt
 
 # Docker specific files
-docker-compose.override.yml  # Exclude local override file if you use one
-.dockerignore                # Exclude Docker ignore file if you have one
+docker-compose.override.yml  # Exclude override file if you're using one for local development
+.dockerignore                # Ignore Docker-specific ignore rules file (if applicable)
 
 # Ignore compiled Python files
 *.pyc
