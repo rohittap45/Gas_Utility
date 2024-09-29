@@ -1,0 +1,83 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+
+# Django stuff:
+*.log
+staticfiles/
+media/
+*.sqlite3
+db.sqlite3
+*.pot
+*.pyc
+*.pyo
+__pycache__/
+
+# Django migrations
+*/migrations/*
+!*/migrations/__init__.py
+
+# If you are using PostgreSQL with Docker
+db_data/
+
+# If you're using Django's "collectstatic" command
+/static/
+staticfiles/
+
+# Ignore the .env file containing sensitive environment variables
+.env
+
+# Ignore IDE/editor specific files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Ignore local dev files and caches
+*.log
+*.swp
+*.swo
+*~
+.DS_Store
+*.bak
+*.tmp
+*.orig
+*.lock
+
+# Ignore pip specific files
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Docker specific files
+docker-compose.override.yml
+docker-compose.yml
+*.env
+*.env.local
+.envrc
+
+# Ignore compiled Python files
+*.pyc
+
+# Ignore coverage reports
+htmlcov/
+.coverage
+*.cover
+.hypothesis/
+
+# Ignore test and coverage results
+.pytest_cache/
+__pycache__/
+.coverage
+nosetests.xml
+coverage.xml
+test*.xml
+.pytest_cache
+
+# Celery specific (if you were using it)
+celerybeat-schedule
+celerybeat.pid
