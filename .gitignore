@@ -22,15 +22,14 @@ __pycache__/
 */migrations/*
 !*/migrations/__init__.py
 
-# If you are using PostgreSQL with Docker
-db_data/
-
-# If you're using Django's "collectstatic" command
+# Static files and media (generated during deployment)
 /static/
+/media/
 staticfiles/
 
 # Ignore the .env file containing sensitive environment variables
 .env
+*.env
 
 # Ignore IDE/editor specific files
 .vscode/
@@ -54,11 +53,8 @@ pip-log.txt
 pip-delete-this-directory.txt
 
 # Docker specific files
-docker-compose.override.yml
-docker-compose.yml
-*.env
-*.env.local
-.envrc
+docker-compose.override.yml  # Exclude local override file if you use one
+.dockerignore                # Exclude Docker ignore file if you have one
 
 # Ignore compiled Python files
 *.pyc
@@ -78,6 +74,6 @@ coverage.xml
 test*.xml
 .pytest_cache
 
-# Celery specific (if you were using it)
-celerybeat-schedule
-celerybeat.pid
+# Ignore AWS-specific credentials
+.aws/                     # Any AWS CLI configuration or credentials
+*.pem                     # AWS key pairs for EC2 instances
