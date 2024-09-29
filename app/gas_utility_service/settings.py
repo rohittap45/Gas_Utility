@@ -37,15 +37,17 @@ SECRET_KEY = env('DJANGO_SECRET_KEY')
 DEBUG = env('DJANGO_DEBUG')
 
 # ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['localhost', '127.0.0.1'])
-ALLOWED_HOSTS = [
-    ".railway.app", 
-]
-RENDER_EXTERNAL_HOSTNAME = os.environ.get('DJANGO_ALLOWED_HOSTS')
-if RENDER_EXTERNAL_HOSTNAME:
-    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+# ALLOWED_HOSTS = [
+#     ".railway.app", 
+# ]
+# RENDER_EXTERNAL_HOSTNAME = os.environ.get('DJANGO_ALLOWED_HOSTS')
+# if RENDER_EXTERNAL_HOSTNAME:
+#     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
     
-if DEBUG:
-    ALLOWED_HOSTS+=["localhost", "127.0.0.1"]
+# if DEBUG:
+#     ALLOWED_HOSTS+=["localhost", "127.0.0.1"]
+
+ALLOWED_HOSTS = ['*']
 
 
 
