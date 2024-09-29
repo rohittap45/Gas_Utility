@@ -1,3 +1,3 @@
-FROM niginx:1.19.0-alpine
+FROM nginx:1.19.0-alpine
 
-COPY ./nginix.conf /etc/nginx/conf.d/nginix.conf
+COPY ./nginx.conf /etc/nginx/conf.d/nginx.conf
