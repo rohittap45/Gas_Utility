@@ -155,23 +155,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # settings.py
 
-# Static files (CSS, JavaScript, Images)
-STATIC_URL = '/static/'
-STATICFILES_BASE_DIR= os.path.join(BASE_DIR, 'staticfiles')  # This is where collectstatic will gather files
+
+# STATICFILES_BASE_DIR should be a Path object, not a string
+STATICFILES_BASE_DIR = BASE_DIR / 'static'
+
+# Create the static directory if it doesn't exist
 STATICFILES_BASE_DIR.mkdir(exist_ok=True, parents=True)
-STATICFILES_VENDOR_DIR = STATICFILES_BASE_DIR / "vendor"
-# You can also specify additional static file directories
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),  # Include any directories where your static files are stored
-]
-
-# output directory for python manage.py collectstatic
-
-STATIC_ROOT = BASE_DIR / "local-cdn"
-# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
-STORAGES = {
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-}
