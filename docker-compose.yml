@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'  # Updated version for more features, if needed
 
 services:
   web:
@@ -10,13 +10,26 @@ services:
       - "8000:8000"
     env_file: 
       - .env  # Load environment variables from .env file
+    depends_on:
+      - db  # Ensure the database is up before starting Django
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    restart: always
 
   nginx:
     image: nginx
+    depends_on:
+      web:
+        condition: service_healthy  # Ensure web service is healthy before starting Nginx
     ports:
       - "80:80"
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./app/static:/app/static  # Serve static files from /app/static
-    depends_on:
-      - web
+      - ./app/static:/app/static  # Serve static files
+    restart: always
+    
+volumes:
+  postgres_data: {}
