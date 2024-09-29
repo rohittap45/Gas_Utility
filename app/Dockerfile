@@ -6,7 +6,7 @@ WORKDIR /app
 # Copy the current directory contents into the container at /app
 COPY . /app
 
-# Install dependencies
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
     gcc \
     libpq-dev \
